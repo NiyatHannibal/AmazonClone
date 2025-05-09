@@ -3,7 +3,9 @@ import './Navbar.css'
 import { Link } from 'react-router-dom'
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { useStateValue } from '../../StateProvider';
 const Navbar = () => {
+  const [{basket }] = useStateValue();
   return (
     <div className='navbar'>
       <div className='navbar__logo'>
@@ -43,7 +45,7 @@ const Navbar = () => {
         <div className='navbar__basket'
         >
         <ShoppingCartIcon />
-        <span >0</span>
+        <span >{basket?.length}</span>
 
         </div>
 
